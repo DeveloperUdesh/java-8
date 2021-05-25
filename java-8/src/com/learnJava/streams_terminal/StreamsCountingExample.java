@@ -4,13 +4,14 @@ import com.learnJava.data.StudentDataBase;
 
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.counting;
+
 public class StreamsCountingExample {
 
-    public static long count(){
-       return  StudentDataBase.getAllStudents()
+    public static long count() {
+        return StudentDataBase.getAllStudents()
                 .stream()
-                .filter(student -> student.getGpa()>=3.9)
-                .collect(Collectors.counting());
+                .filter(student -> student.getGpa() >= 3.9).count();
     }
 
     public static void main(String[] args) {

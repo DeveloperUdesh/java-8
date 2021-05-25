@@ -3,10 +3,8 @@ package com.learnJava.streams;
 import com.learnJava.data.Student;
 import com.learnJava.data.StudentDataBase;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -41,9 +39,7 @@ public class StreamsExample {
 
         List<String> namesList = StudentDataBase.getAllStudents().
                 stream() // Stream<Student>
-                .peek((student -> {
-                    System.out.println(student);
-                }))
+                .peek((System.out::println))
                 .map(Student::getName) //<Stream<List<Activites>>
                 .peek(System.out::println)
                 .distinct() // removes duplicates

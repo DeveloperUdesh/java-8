@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 
 public class ConsumerExample {
 
-    static Consumer<Student>  c1= p -> System.out.println(p);
+  //  static Consumer<Student>  c1= p -> System.out.println(p);
 
     static Consumer<Student>  c2= p -> System.out.print(p.getName().toUpperCase());
 
@@ -19,7 +19,7 @@ public class ConsumerExample {
 
         List<Student> personList = StudentDataBase.getAllStudents();
 
-        personList.forEach(c1);
+        personList.forEach(p -> System.out.println(p.getName().toUpperCase()));
 
     }
 
@@ -46,8 +46,8 @@ public class ConsumerExample {
         c1.accept("java8");
 
         printName();
-        printNameAndActivities();
-        printNameAndActivitiesUsingCondition();
+       // printNameAndActivities();
+        //printNameAndActivitiesUsingCondition();
 
 
 
